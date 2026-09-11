@@ -1,0 +1,15 @@
+services:
+
+  mariadb:
+    image: mariadb:11
+    container_name: dz-sandbox-auth-mariadb
+    environment:
+      MARIADB_DATABASE: dz_auth
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - dz-auth-mariadb-data:/var/lib/mysql
+
+volumes:
+  dz-auth-mariadb-data:

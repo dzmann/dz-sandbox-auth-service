@@ -1,3 +1,16 @@
 spring:
   application:
-    name: dz.sandbox.auth.service
+    name: dz-sandbox-auth-service
+  datasource:
+    url: jdbc:mariadb://localhost:3307/dz_auth
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+jwt:
+  secret: change-this-secret-key-to-a-long-random-value-at-least-32-bytes
+  expiration: 3600000
+server:
+  port: 8080
